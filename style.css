@@ -1,193 +1,302 @@
-    /* Reset */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-    }
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
 
-    /* Container class to structure content */
-    .container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 20px;
-        flex-grow: 1;
-    }
+/* Container class to structure content */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+}
 
-    /* Header Styling */
-    /* Header Styling */
-    header {
-        background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
-        padding: 20px 0;
-        border-bottom: 2px solid #c0a16b; /* Subtle gold border */
-        box-shadow: 0 4px 6px rgba(192, 161, 107, 0.3); /* Slight gold shadow */
-        position: fixed; /* Keeps the header at the top while scrolling */
-        width: 100%;
-        z-index: 100; /* Ensures the header stays on top */
-        backdrop-filter: blur(10px); /* Adds a blur effect */
-        -webkit-backdrop-filter: blur(10px); /* Support for older browsers */
-        transition: background-color 0.3s ease-in-out; /* Smooth transition for any hover effects */
-    }
+/* Header Styling */
+header {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    padding: 20px 0;
+    border-bottom: 2px solid #c0a16b; /* Subtle gold border */
+    box-shadow: 0 4px 6px rgba(192, 161, 107, 0.3); /* Slight gold shadow */
+    position: fixed; /* Keeps the header at the top while scrolling */
+    width: 100%;
+    z-index: 100; /* Ensures the header stays on top */
+    backdrop-filter: blur(10px); /* Adds a blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for older browsers */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for any hover effects */
+}
 
-    
+.header-container {
+    display: flex;
+    align-items: center; /* Center-align vertically */
+    justify-content: space-between; /* Space between logo and nav */
+}
 
-    .header-container {
-        display: flex;
-        align-items: center; /* Center-align vertically */
-        justify-content: space-between; /* Space between logo and nav */
-    }
+/* Logo Styling */
+.logo {
+    flex: 1; /* Take up some space */
+}
 
-    /* Logo Styling */
-    .logo {
-        flex: 1; /* Take up some space */
-    }
+.logo img {
+    height: 50px;
+    filter: brightness(1.8); /* Slight dim for a refined logo image */
+}
 
-    .logo img {
-        height: 50px;
-        filter: brightness(1.8); /* Slight dim for a refined logo image */
-    }
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    gap: 30px; /* Add space between links */
+    align-items: center; /* Vertically center links with logo */
+}
 
-    /* Navigation Styling */
-    nav {
-        display: flex;
-        justify-content: flex-start; /* Align items to the left */
-        gap: 30px; /* Add space between links */
-        align-items: center; /* Vertically center links with logo */
-    }
+nav a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 1.2em;
+}
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        position: relative;
-        font-size: 1.2em;
-    }
+nav a:hover span {
+    opacity: 0;
+}
 
-    nav a:hover span {
+nav a:hover::after {
+    content: "Open";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    color: white;
+}
+
+nav img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Main Content Styling */
+main {
+    padding-top: 100px; /* Adjusted space for header */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+/* General Headings Styling */
+h1, h2, h3 {
+    margin: 20px 0;
+}
+
+/* Styling for Span in Headings */
+h1 span, h2 span, h3 span {
+    font-size: 2em;
+    display: inline-block;
+    padding: 10px;
+    border-bottom: 2px solid #1e90ff;
+}
+
+/* Styling for Projects Section */
+.projects h2 {
+    color: #1e90ff;
+}
+
+/* Hero Section Styling */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    background-color: black; /* Keep the black theme */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1; /* Take up half of the space */
+    color: white;
+    padding-right: 30px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero .subheadline {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #c0a16b;
+}
+
+.btn-cta {
+    padding: 15px 30px;
+    background-color: #1e90ff;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #1c86ee;
+}
+
+.hero-image {
+    flex: 1; /* Take up half of the space */
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+    border-top: #c0a16b 2px solid;
+}
+
+footer p, footer pre {
+    margin: 10px 0;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+/* CARS Section Styling */
+.cars {
+    padding: 50px 0;
+    background-color: #1e1e1e;
+}
+
+.cars h2 {
+    color: #1e90ff;
+}
+
+/* Updated CARS Section Styling with Animations */
+.cars .card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #2e2e2e, #1e1e1e);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0; /* Start invisible, fade in */
+}
+
+.cars .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #383838, #1f1f1f); /* Subtle gradient change on hover */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
         opacity: 0;
     }
-
-    nav a:hover::after {
-        content: "Open";
-        position: absolute;
-        left: 0;
-        top: 0;
+    to {
+        transform: translateY(0);
         opacity: 1;
-        color: white;
     }
+}
 
-    nav img {
-        height: 20px;
-        margin-right: 10px;
-    }
-    
-        /* Main Content Styling */
-    
-    main {
-        padding-top: 2000px; /* Adds enough space to push content below the header */
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 50px;
-        text-align: center;
-    }
+.cars .card img {
+    max-width: 50%;
+    border-radius: 10px;
+}
 
-    /* General Headings Styling */
-    h1, h2, h3 {
-        margin: 20px 0;
-    }
+.cars .card-content {
+    flex: 1;
+    padding: 20px;
+}
 
-    /* Styling for Span in Headings */
-    h1 span, h2 span, h3 span {
-        font-size: 2em;
-        display: inline-block;
-        padding: 10px;
-        border-bottom: 2px solid #1e90ff;
-    }
+.cars .card:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-    /* Styling for Projects Section */
-    .projects h2 {
-        color: #1e90ff;
-    }
+.cars .card h3 {
+    margin: 10px 0;
+}
 
+.cars .card p {
+    margin: 10px 0;
+}
 
-        /* Hero Section Styling */
-    .hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20px;
-        background-color: black; /* Keep the black theme */
-    }
+/* Gadgets Section Styling */
+.gadgets {
+    padding: 50px 0;
+    background-color: #2e2e2e;
+}
 
-    .hero-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1200px;
-        width: 100%;
-    }
+.gadgets h2 {
+    color: #1e90ff;
+}
 
-    .hero-text {
-        flex: 1; /* Take up half of the space */
-        color: white;
-        padding-right: 30px;
-    }
+/* Gadgets Section Updated Styling with Animations */
+.gadgets .card {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #3e3e3e, #2e2e2e);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
 
-    .hero h1 {
-        font-size: 3em;
-        margin-bottom: 20px;
-    }
+.gadgets .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(135deg, #484848, #323232); /* Gradient change on hover */
+}
 
-    .hero .subheadline {
-        font-size: 1.5em;
-        margin-bottom: 30px;
-        color: #c0a16b;
-    }
+.gadgets .card img {
+    max-width: 50%;
+    border-radius: 10px;
+}
 
-    .btn-cta {
-        padding: 15px 30px;
-        background-color: #1e90ff;
-        color: white;
-        text-decoration: none;
-        font-size: 1.2em;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
+.gadgets .card-content {
+    flex: 1;
+    padding: 20px;
+}
 
-    .btn-cta:hover {
-        background-color: #1c86ee;
-    }
+.gadgets .card:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-    .hero-image {
-        flex: 1; /* Take up half of the space */
-        text-align: right;
-    }
+.gadgets .card h3 {
+    margin: 10px 0;
+}
 
-    .hero-image img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-
-    /* Footer Styling */
-    footer {
-        background-color: black;
-        padding: 20px 0;
-        text-align: center;
-        border-top: #c0a16b 2px solid;
-    }
-
-    footer p, footer pre {
-        margin: 10px 0;
-    }
-
-    footer span {
-        font-weight: bold;
-    }
+.gadgets .card p {
+    margin: 10px 0;
+}
